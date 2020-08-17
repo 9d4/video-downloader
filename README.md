@@ -1,5 +1,4 @@
-# react-fast-start
 Basic React JS App to start creating React App with webpack manually instead of create-react-app
 
-Just run
-`npm add`
+# Getting Started
+Just run `npm add` to install all dependencies, and you're set.
