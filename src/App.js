@@ -1,6 +1,7 @@
 import React from 'react'
 
 import './App.css'
+import 'bootstrap'
 
 class App extends React.Component {
     render(){
