@@ -1,6 +1,5 @@
 import React from 'react'
 import { en, en as lang } from '../../Data/Languages/en'
-import DownloadList from './Download List'
 
 export default class FormInput extends React.Component {
     constructor(props) {
@@ -13,29 +12,13 @@ export default class FormInput extends React.Component {
 
         this.handleInputChange = this.handleInputChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleKey = this.handleKey.bind(this)
     }
 
     handleInputChange(event) {
         const target = event.target
-
-        const ifUrl = () => {
-            this.setState(_ => (
-                {
-                    url: target.value
-                }
-            ))
-        }
-
-        const ifFormat = () => {
-            this.setState(_ => (
-                {
-                    format: target.value
-                }
-            ))
-        }
-
-        target.type == 'url' ? ifUrl() : ifFormat()
+        this.setState({
+            [target.name]: target.value
+        })
     }
 
     handleSubmit(event) {
@@ -56,6 +39,10 @@ export default class FormInput extends React.Component {
             ))
         }
 
+        //  PASS THE DATA TO MAIN
+        const createButton = this.props.handleCreateButton
+        createButton()
+        //  END
 
         function validURL(str) {
             var pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
@@ -68,12 +55,7 @@ export default class FormInput extends React.Component {
         }
     }
 
-    handleKey(event) {
-    }
-
     render() {
-        console.log(this.state.format, this.state.url)
-        console.log(this.state.urlCorrect)
         return (
             <div className='card bg-light' id='formInputData'>
                 <div className='card-header'>
@@ -100,6 +82,7 @@ export default class FormInput extends React.Component {
                                 <select
                                     className='form-control form-control-sm'
                                     id='formatBox'
+                                    name='format'
                                     value={this.state.format}
                                     onChange={this.handleInputChange}
                                 >
