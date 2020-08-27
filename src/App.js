@@ -12,7 +12,7 @@ import Main from './Components/Main'
 class App extends React.Component {
     render(){
         return (
-            <div className="bg-light">
+            <div>
                 <AppBar />
                 <Main />
             </div>
