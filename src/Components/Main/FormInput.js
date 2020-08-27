@@ -62,7 +62,7 @@ export default class FormInput extends React.Component {
                     <span className='card-text font-weight-bolder'>{lang['input-form-data']}</span>
                 </div>
                 <div className='card-body'>
-                    <form className='' onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit}>
                         <div className='form-row'>
                             <div className='form-group col-12 col-md-6'>
                                 <label htmlFor='urlBox'>{lang['form-url-input']}</label>
@@ -75,7 +75,9 @@ export default class FormInput extends React.Component {
                                     onChange={this.handleInputChange}
                                     value={this.state.url}
                                 />
-                                <small className='form-text text-muted'>{en['form-url-input-hint']}</small>
+                                <small className='form-text text-muted'>
+                                    {en['form-url-input-hint']}
+                                </small>
                             </div>
                             <div className='form-group col-12 col-md-6'>
                                 <label htmlFor='formatBox'>{lang['form-format-input']}</label>
@@ -98,9 +100,19 @@ export default class FormInput extends React.Component {
                                 </select>
                             </div>
                         </div>
-                        <small className={this.state.urlCorrect ? 'form-text text-danger d-none' : 'form-text text-danger'} id='hintWrongUrl'>{en['blank-url-hint']}</small>
+                        <small
+                            className={this.state.urlCorrect ? 'form-text text-danger d-none' : 'form-text text-danger'}
+                            id='hintWrongUrl'
+                        >
+                            {en['blank-url-hint']}
+                        </small>
                         <div className='d-flex justify-content-end'>
-                            <button className='btn btn-sm bg-primary text-light ml-auto' type='submit'>{lang['form-submit-button']}</button>
+                            <button
+                                className='btn btn-sm bg-primary text-light ml-auto'
+                                type='submit'
+                            >
+                                {lang['form-submit-button']}
+                            </button>
                         </div>
                     </form>
                 </div>
