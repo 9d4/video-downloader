@@ -7,7 +7,8 @@ export default class FormInput extends React.Component {
         this.state = {
             url: '',
             format: 'MP3',
-            urlCorrect: true
+            urlCorrect: true,
+            videoCount: 0
         }
 
         this.handleInputChange = this.handleInputChange.bind(this)
@@ -34,15 +35,15 @@ export default class FormInput extends React.Component {
         } else if (validURL(this.state.url)) {
             this.setState(prevState => (
                 {
-                    urlCorrect: true
+                    urlCorrect: true,
+                    videoCount: ++prevState.videoCount
                 }
             ))
-        }
 
-        //  PASS THE DATA TO MAIN
-        const createButton = this.props.handleCreateButton
-        createButton()
-        //  END
+            //  PASS THE DATA TO MAIN
+            this.props.handleCreateButton({ url: this.state.url, format: this.state.format, id: this.state.videoCount })
+            //  END
+        }
 
         function validURL(str) {
             var pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
