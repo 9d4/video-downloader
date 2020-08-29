@@ -1,3 +1,7 @@
 body{
     background-color: #f8f9fa !important;
 }
+
+.button-delete-item{
+    margin-top: -9px;
+}

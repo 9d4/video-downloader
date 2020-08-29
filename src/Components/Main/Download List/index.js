@@ -7,8 +7,11 @@ export default class DownloadList extends React.Component {
         super(props)
         this.state = {
             videoList: [],
-            prevProps: {}
+            prevProps: {},
+            deletedList: []
         }
+    
+        this.handleDelete = this.handleDelete.bind(this)
     }
 
     componentDidMount() {
@@ -33,10 +36,31 @@ export default class DownloadList extends React.Component {
         ))
     }
 
-    render() {
-        console.log('f: render()\n', 'props->', this.props.videoList, '\nstate->', this.state.videoList)
+    handleDelete(id) {
+        let updatedDeletedList = this.state.deletedList
+        updatedDeletedList.push(id)
+        console.log(updatedDeletedList)
 
-        const items = this.state.videoList.map(item => <DownloadItem key={item.id} id={item.id} url={item.url} format={item.format} />)
+        this.setState(prevState => ({
+            deletedList: updatedDeletedList ,
+        }))
+    }
+
+    render() {
+        const deletedVideoList = this.state.deletedList
+
+        const items = this.state.videoList.map(item => (
+            deletedVideoList.includes(item.id) ?
+                null
+                :
+                < DownloadItem
+                    handleDelete={this.handleDelete}
+                    key={item.id}
+                    id={item.id}
+                    url={item.url}
+                    format={item.format}
+                />
+        ))
 
         return (
             <div className={this.props.className}>
