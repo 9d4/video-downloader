@@ -12,11 +12,9 @@ export default class DownloadList extends React.Component {
     }
 
     componentDidMount() {
-        let tmp = [...this.props.videoList]
-
         this.setState((prevstate) => (
             {
-                videoList: tmp,
+                videoList: this.props.videoList,
                 prevProps: this.props
             }
         ))
@@ -38,7 +36,7 @@ export default class DownloadList extends React.Component {
     render() {
         console.log('f: render()\n', 'props->', this.props.videoList, '\nstate->', this.state.videoList)
 
-        const items = this.state.videoList.map(item => <DownloadItem key={item.id} url={item.url} format={item.format} />)
+        const items = this.state.videoList.map(item => <DownloadItem key={item.id} id={item.id} url={item.url} format={item.format} />)
 
         return (
             <div className={this.props.className}>
