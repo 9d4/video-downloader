@@ -47,13 +47,15 @@ export default class DownloadList extends React.Component {
                         <span className='card-text font-weight-bolder'>{lang['donwload-section-title']}</span>
                     </div>
                     <div className='card-body'>
-                        <div className='alert alert-info alert-dismissible fade show' data-dismiss="alert">
+                        <div className='alert alert-info alert-dismissible fade show'
+                            data-dismiss="alert"
+                        >
                             <p className='alert-text m-0 text-justify'>
                                 {en['download-hint']}
                             </p>
                             <button
                                 type="button"
-                                class="close"
+                                className="close"
                                 data-dismiss="alert"
                                 aria-label="Close"
                             >
