@@ -7,9 +7,9 @@ export default class DownloadItem extends React.Component {
 
     render() {
         return (
-            <div className='col my-2 d-flex justify-content-center'>
+            <div className='col-12 col-md-6 col-lg-3 my-2 d-flex justify-content-center'>
                 <iframe
-                    style={{ width: '230px', height: '60px', border: 0, overflow: 'hidden' }}
+                    style={{ width: '100%', height: '60px', border: 0, overflow: 'hidden' }}
                     scrolling="no"
                     src={`https://loader.to/api/button/?url=${this.props.url}&f=${this.props.format.toLowerCase()}`}
                 ></iframe>
