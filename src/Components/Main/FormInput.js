@@ -44,7 +44,13 @@ export default class FormInput extends React.Component {
             let format = this.state.format
             format.includes('p') ? format.replace('p', '') : null
 
-            this.props.handleCreateButton({ url: this.state.url, format: this.state.format, id: this.state.videoCount })
+            this.props.handleCreateButton(
+                {
+                    url: this.state.url,
+                    format: this.state.format,
+                    id: this.state.videoCount
+                }
+            )
             //  END
         }
 
