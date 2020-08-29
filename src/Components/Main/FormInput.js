@@ -41,6 +41,9 @@ export default class FormInput extends React.Component {
             ))
 
             //  PASS THE DATA TO MAIN
+            let format = this.state.format
+            format.includes('p') ? format.replace('p', '') : null
+
             this.props.handleCreateButton({ url: this.state.url, format: this.state.format, id: this.state.videoCount })
             //  END
         }
@@ -92,10 +95,10 @@ export default class FormInput extends React.Component {
                                     <option value='MP3'>MP3</option>
                                     <option value='M4A'>M4A</option>
                                     <option value='MP4'>MP4</option>
-                                    <option value='360p'>360p</option>
-                                    <option value='480p'>480p</option>
-                                    <option value='720p'>720p</option>
-                                    <option value='1080p'>1080p</option>
+                                    <option value='360'>360p</option>
+                                    <option value='480'>480p</option>
+                                    <option value='720'>720p</option>
+                                    <option value='1080'>1080p</option>
                                     <option value='4k'>4k</option>
                                     <option value='8k'>8k</option>
                                 </select>

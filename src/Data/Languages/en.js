@@ -5,6 +5,7 @@ const en = {
     'form-format-input': 'Select Format or Quality',
     'form-submit-button': 'Download',
     'donwload-section-title': 'Download Here',
-    'blank-url-hint': 'Please insert correct URL'
+    'blank-url-hint': 'Please insert correct URL',
+    'download-hint': 'aa'
 }
 export { en }
