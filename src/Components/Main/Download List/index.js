@@ -48,9 +48,9 @@ export default class DownloadList extends React.Component {
                     </div>
                     <div className='card-body'>
                         <div className='alert alert-info alert-dismissible fade show' data-dismiss="alert">
-                            <span className='alert-text'>
+                            <p className='alert-text m-0 text-justify'>
                                 {en['download-hint']}
-                            </span>
+                            </p>
                             <button
                                 type="button"
                                 class="close"
