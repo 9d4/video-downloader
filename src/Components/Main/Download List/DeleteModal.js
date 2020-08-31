@@ -10,7 +10,7 @@ export default class DeleteModal extends React.Component {
         return (
             <div>
                 <div
-                    className='modal fade'
+                    className='modal'
                     id={`dialog-delete-button-${this.props.id}`}
                     tabIndex='-1'
                     aria-labelledby={`dialog-delete-button-${this.props.id}`}
