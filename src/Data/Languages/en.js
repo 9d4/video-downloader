@@ -7,6 +7,8 @@ const en = {
     'donwload-section-title': 'Download Here',
     'blank-url-hint': 'Please insert correct URL',
     'download-hint': 'Click the download Button, after you notice \'Download Now\', OPEN IT IN NEW TAB. it\'s necessary because some browsers do not fully support with this app.',
-    'delete-button': 'Delete'
+    'delete-button': 'Delete',
+    'cancel': 'Cancel',
+    'format': 'Format'
 }
 export { en }
