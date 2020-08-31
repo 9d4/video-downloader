@@ -39,7 +39,6 @@ export default class DownloadList extends React.Component {
     handleDelete(id) {
         let updatedDeletedList = this.state.deletedList
         updatedDeletedList.push(id)
-        console.log(updatedDeletedList)
 
         this.setState(prevState => ({
             deletedList: updatedDeletedList ,

@@ -2,6 +2,10 @@ import React from 'react'
 import { en as lang } from '../../../Data/Languages/en'
 
 export default class DeleteModal extends React.Component {  
+    componentDidMount(){
+        $(`#dialog-delete-button-${this.props.id}`).modal('show')
+    }
+
     render() {
         return (
             <div>
@@ -11,8 +15,10 @@ export default class DeleteModal extends React.Component {
                     tabIndex='-1'
                     aria-labelledby={`dialog-delete-button-${this.props.id}`}
                     aria-hidden='true'
+                    data-backdrop='static'
+                    data-keyboard='false'
                 >
-                    <div className='modal-dialog'>
+                    <div className='modal-dialog modal-dialog-centered'>
                         <div className='modal-content'>
                             <div className='modal-header'>
                                 <h5 className='modal-title'>{lang['delete-button']}</h5>
@@ -21,6 +27,7 @@ export default class DeleteModal extends React.Component {
                                     className='close'
                                     data-dismiss='modal'
                                     aria-label='Close'
+                                    onClick={this.props.handledismiss}
                                 >
                                     <span aria-hidden='true'>&times;</span>
                                 </button>
@@ -52,6 +59,7 @@ export default class DeleteModal extends React.Component {
                                     type='button'
                                     className='btn btn-sm btn-secondary'
                                     data-dismiss='modal'
+                                    onClick={this.props.handledismiss}
                                 >
                                     {lang['cancel']}
                                 </button>
@@ -60,7 +68,7 @@ export default class DeleteModal extends React.Component {
                                     type='button'
                                     className='btn btn-sm btn-danger'
                                     data-dismiss='modal'
-                                    onClick={this.props.handleDelete.bind(this, this.props.id)}
+                                    onClick={this.props.handledelete.bind(this, this.props.id)}
                                 >
                                     {lang['delete-button']}
                             </button>
